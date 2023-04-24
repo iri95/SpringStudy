@@ -1,0 +1,5 @@
+package com.mycom.study.service;
+
+public interface BoardService {
+
+}

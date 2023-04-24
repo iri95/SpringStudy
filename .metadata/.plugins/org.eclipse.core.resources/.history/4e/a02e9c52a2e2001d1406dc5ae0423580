@@ -1,0 +1,29 @@
+package com.mycom.study.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.mycom.study.dto.UserDto;
+
+@Repository
+public class UserDaoImpl implements UserDao{
+	
+	@Autowired
+	DataSource dataSource;
+	
+	@Override
+	public int login(UserDto userDto) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		
+		return 0;
+	}
+
+}
