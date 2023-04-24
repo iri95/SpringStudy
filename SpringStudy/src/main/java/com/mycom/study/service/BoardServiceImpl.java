@@ -29,4 +29,14 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.detail(bno);
 	}
 
+	@Override
+	public int delete(int bno) {
+		return boardDao.delete(bno);
+	}
+
+	@Override
+	public int update(BoardDto boardDto) {
+		return boardDao.update(boardDto);
+	}
+
 }

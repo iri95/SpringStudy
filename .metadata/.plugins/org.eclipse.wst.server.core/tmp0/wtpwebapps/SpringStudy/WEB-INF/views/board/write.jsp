@@ -14,6 +14,19 @@
 	crossorigin="anonymous">
 </head>
 <body>
-
+<form action="write" method="POST">
+<input type="hidden" value="<%=((UserDto)session.getAttribute("user")).getUserId() %>" name="userId">
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Title</span>
+  <input type="text" class="form-control" name="title" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="input-group">
+  <span class="input-group-text">Content</span>
+  <textarea class="form-control" name="content" aria-label="With textarea"></textarea>
+</div>
+<button type="submit" class="btn btn-primary" >작성하기</button>
+</form>
+<a href="/study/board/list"><button type="button" class="btn btn-secondary">목록</button></a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

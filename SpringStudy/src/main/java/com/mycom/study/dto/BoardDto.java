@@ -2,6 +2,7 @@ package com.mycom.study.dto;
 
 public class BoardDto {
 	private int bno;
+	private String userId;
 	private String title;
 	private String content;
 	private String date;
@@ -14,6 +15,12 @@ public class BoardDto {
 	}
 	public String getTitle() {
 		return title;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public void setTitle(String title) {
 		this.title = title;
@@ -38,8 +45,8 @@ public class BoardDto {
 	}
 	@Override
 	public String toString() {
-		return "BoardDto [bno=" + bno + ", title=" + title + ", content=" + content + ", date=" + date + ", cnt=" + cnt
-				+ "]";
+		return "BoardDto [bno=" + bno + ", userId=" + userId + ", title=" + title + ", content=" + content + ", date="
+				+ date + ", cnt=" + cnt + "]";
 	}
 	
 	

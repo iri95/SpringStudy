@@ -102,11 +102,12 @@ public class BoardDaoImpl implements BoardDao{
 			
 			rs.next();
 			dto.setBno(rs.getInt("bno"));
+			dto.setUserId(rs.getString("userid"));
 			dto.setTitle(rs.getString("title"));
 			dto.setContent(rs.getString("content"));
 			dto.setDate(rs.getString("date"));
 			dto.setCnt(rs.getInt("cnt"));
-			
+			System.out.println(dto.toString());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -114,6 +115,54 @@ public class BoardDaoImpl implements BoardDao{
 		}
 		
 		return dto;
+	}
+
+	@Override
+	public int delete(int bno) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int ret = -1;
+		
+		try {
+			StringBuilder sb = new StringBuilder();
+			sb.append(" delete from board ")
+			.append(" where bno = ? ");
+			
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(sb.toString());
+			pstmt.setInt(1, bno);
+			ret = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.releaseConnection(pstmt, con);
+		}
+		
+		return ret;
+	}
+
+	@Override
+	public int update(BoardDto boardDto) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		int ret = -1;
+		try {
+			StringBuilder sb = new StringBuilder();
+			sb.append(" update board set title = ?, content = ? ")
+			.append(" where bno = ? ");
+			
+			con = dataSource.getConnection();
+			pstmt = con.prepareStatement(sb.toString());
+			pstmt.setString(1, boardDto.getTitle());
+			pstmt.setString(2, boardDto.getContent());
+			pstmt.setInt(3, boardDto.getBno());
+			ret = pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.releaseConnection(pstmt, con);
+		}
+		return ret;
 	}
 
 }

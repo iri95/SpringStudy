@@ -33,7 +33,7 @@
 			<%
 				for (BoardDto board : boardList) {
 			%>
-			<tr onclick="location.href='orderDetail/<%=board.getBno()%>'">
+			<tr onclick="location.href='detail/<%=board.getBno()%>'">
 				<th scope="row"><%=board.getBno()%></th>
 				<td><%=board.getTitle()%></td>
 				<td><%=board.getContent()%></td>
@@ -43,9 +43,13 @@
 			<%
 				}
 			%>
-
-
 		</tbody>
 	</table>
+	<% if(session.getAttribute("user") != null){%>
+	<a href="/study/board/write"><button type="button" class="btn btn-secondary">작성하기</button></a>
+	<% }else{%>
+	<a href="/study/user/login"><button type="button" class="btn btn-secondary">로그인</button></a>
+	<a href="/study/user/signin"><button type="button" class="btn btn-secondary">회원가입</button></a>
+	<%} %>
 </body>
 </html>
