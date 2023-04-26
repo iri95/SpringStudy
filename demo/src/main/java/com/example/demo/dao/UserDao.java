@@ -1,0 +1,14 @@
+package com.example.demo.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.demo.dto.UserDto;
+
+@Mapper
+public interface UserDao {
+
+	UserDto login(UserDto userDto);
+
+	int signin(UserDto userDto);
+
+}
