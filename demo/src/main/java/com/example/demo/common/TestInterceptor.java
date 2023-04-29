@@ -23,9 +23,11 @@ public class TestInterceptor implements HandlerInterceptor{
 		// #2 로그인 여부
 		HttpSession session = request.getSession();
 		UserDto login = (UserDto) session.getAttribute("user");
-		if(login != null) return true;
+		if(login == null) {
+			response.sendRedirect("/login");
+			return false;
+		}
+		return true;
 		
-		response.sendRedirect("/login");
-		return false;
 	}
 }
