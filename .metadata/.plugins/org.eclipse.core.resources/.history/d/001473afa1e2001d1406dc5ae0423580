@@ -1,8 +1,0 @@
-package com.mycom.study.dto;
-
-public class UserDto {
-	private String userId;
-	private String userPw;
-	private String userName;
-	private String phoneNum;
-}

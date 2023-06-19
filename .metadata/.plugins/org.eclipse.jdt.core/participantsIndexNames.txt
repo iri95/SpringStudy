@@ -1,9 +1,0 @@
-INDEX VERSION 1.131
-C:\study\Spring\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1113334672.index
-\SpringStudy\src\main\java
-C:\study\Spring\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1565490269.index
-\SpringStudy\src\main\java
-C:\study\Spring\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3704491924.index
-\SpringStudy\src\main\java
-C:\study\Spring\study\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1878288240.index
-\SpringStudy\src\main\java

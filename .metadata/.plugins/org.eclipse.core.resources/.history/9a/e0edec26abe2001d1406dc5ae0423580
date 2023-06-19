@@ -1,9 +1,0 @@
-package com.mycom.study.service;
-
-import com.mycom.study.dto.BoardDto;
-
-public interface BoardService {
-
-	int write(BoardDto boardDto);
-
-}
